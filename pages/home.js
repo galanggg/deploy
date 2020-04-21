@@ -25,7 +25,6 @@ const Home = () => {
       if (e.target.name !== sidebar) {
         setSidebar(e.target.name);
       }
-      console.log(sidebar);
     },
     [sidebar]
   );
