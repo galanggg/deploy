@@ -1,5 +1,5 @@
 {
-  "name": "slashroot",
+  "name": "root",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "bulma": "^0.8.2",
-    "framer-motion": "^1.10.3",
     "next": "9.3.5",
     "rbx": "^2.2.0",
     "react": "16.13.1",

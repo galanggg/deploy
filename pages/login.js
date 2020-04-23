@@ -15,9 +15,12 @@ const Login = () => {
   return (
     <Section>
       <Column.Group breakpoint="tablet" centered>
-        <Column size={5}>
+        <Column size={4}>
           <Image.Container>
-            <Image src="/static/images/logo.jpg" className="login__logo" />
+            <Image
+              src="/static/images/slashroot_logo.png"
+              className="login__logo"
+            />
           </Image.Container>
           <Box>
             <Field>
@@ -36,8 +39,8 @@ const Login = () => {
 
             <Field>
               <Control>
-                <Link href={("/home", "/home")}>
-                  <Button color="link" fullwidth>
+                <Link href={("/scoreboard", "/scoreboard")}>
+                  <Button color="dark" fullwidth>
                     Login
                   </Button>
                 </Link>
