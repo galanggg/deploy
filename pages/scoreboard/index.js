@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Column, Box, Label, Title, Table, Tab } from "rbx";
+import { motion } from "framer-motion";
 import Sidebar from "../../components/Sidebar";
+import { Fade } from "../../components/Transition";
 
-const Scoreboard = ({ res }) => {
+const Scoreboard = () => {
   const [activeTab, setActiveTab] = useState(9);
 
   const renderHeadTable = () => {
@@ -70,85 +72,87 @@ const Scoreboard = ({ res }) => {
 
   return (
     <Sidebar>
-      <Column>
-        <Box>
-          <Column.Group textAlign="centered" size={12}>
-            <Column>
-              <Label>Games ends in</Label>
-              01:54:23
-              <br />
-            </Column>
-            <Column>
-              <Label>Current Tick</Label>
-              09
-            </Column>
-            <Column>
-              <Label>Next tick about</Label>
-              02:54
-            </Column>
-          </Column.Group>
-        </Box>
+      <motion.div initial="initial" animate="in" exit="out" variants={Fade}>
+        <Column>
+          <Box>
+            <Column.Group textAlign="centered" size={12}>
+              <Column>
+                <Label>Games ends in</Label>
+                01:54:23
+                <br />
+              </Column>
+              <Column>
+                <Label>Current Tick</Label>
+                09
+              </Column>
+              <Column>
+                <Label>Next tick about</Label>
+                02:54
+              </Column>
+            </Column.Group>
+          </Box>
 
-        <Box>
-          <Title size={4} className="box__title">
-            Full Scoreboard
-          </Title>
-          <Table hoverable fullwidth className="table">
-            <Table.Head>
-              <Table.Row>{renderHeadTable()}</Table.Row>
-            </Table.Head>
-            <Table.Body>{renderTable()}</Table.Body>
-          </Table>
-        </Box>
+          <Box>
+            <Title size={4} className="box__title">
+              Full Scoreboard
+            </Title>
+            <Table hoverable fullwidth className="table">
+              <Table.Head>
+                <Table.Row>{renderHeadTable()}</Table.Row>
+              </Table.Head>
+              <Table.Body>{renderTable()}</Table.Body>
+            </Table>
+          </Box>
 
-        <Box>
-          <Column.Group>
-            <Column vcentered>
-              <Title size={4} className="box__title">
-                Per Round Scoreboard
-              </Title>
-            </Column>
-            <Column>
-              <Tab.Group align="centered" kind="boxed">
-                {renderTab()}
-              </Tab.Group>
-            </Column>
-          </Column.Group>
+          <Box>
+            <Column.Group>
+              <Column vcentered>
+                <Title size={4} className="box__title">
+                  Per Round Scoreboard
+                </Title>
+              </Column>
+              <Column>
+                <Tab.Group align="centered" kind="boxed">
+                  {renderTab()}
+                </Tab.Group>
+              </Column>
+            </Column.Group>
 
-          <Table hoverable fullwidth className="table">
-            <Table.Head>
-              <Table.Row>{renderHeadTable()}</Table.Row>
-            </Table.Head>
-            <Table.Body>{renderTable()}</Table.Body>
-          </Table>
-        </Box>
+            <Table hoverable fullwidth className="table">
+              <Table.Head>
+                <Table.Row>{renderHeadTable()}</Table.Row>
+              </Table.Head>
+              <Table.Body>{renderTable()}</Table.Body>
+            </Table>
+          </Box>
 
-        <style jsx>{`
-          :global(.table th) {
-            text-align: center !important;
-            vertical-align: middle;
-          }
-          :global(.table td) {
-            text-align: center !important;
-            vertical-align: middle;
-          }
-          :global(.table thead) {
-            border-top: solid 2px rgb(229, 229, 229) !important;
-          }
-          :global(.tabs li.is-active a) {
-            background-color: #3273dc !important;
-            color: #fff;
-          }
-          :global(.box__title) {
-            margin-bottom: 15px !important;
-          }
-          :global(.tabs li.is-active a) {
-            background-color: white !important;
-            color: black;
-            font-weight: 600;
-          }
-        `}</style>
-      </Column>
+          <style jsx>{`
+            :global(.table th) {
+              text-align: center !important;
+              vertical-align: middle;
+            }
+            :global(.table td) {
+              text-align: center !important;
+              vertical-align: middle;
+            }
+            :global(.table thead) {
+              border-top: solid 2px rgb(229, 229, 229) !important;
+            }
+            :global(.tabs li.is-active a) {
+              background-color: #3273dc !important;
+              color: #fff;
+            }
+            :global(.box__title) {
+              margin-bottom: 15px !important;
+            }
+            :global(.tabs li.is-active a) {
+              background-color: white !important;
+              color: black;
+              font-weight: 600;
+            }
+          `}</style>
+        </Column>
+      </motion.div>
     </Sidebar>
   );
 };
