@@ -8,7 +8,6 @@ const ModalContainer = React.memo(({ closeService, showService, data }) => {
     setTab(!tab);
   }, [tab]);
 
-  console.log("rendering modal service");
   const { name, category, links, score, description, author, hint } = data;
 
   let hintShow = "No hint added!";

@@ -1,6 +1,7 @@
 import Link from "../Link";
 import ModalService from "../Modal";
 import { Column, Menu, Image, Container, Section, Tag } from "rbx";
+import { AnimatePresence } from "framer-motion";
 import { useState, useCallback } from "react";
 
 const serviceState = [
@@ -202,7 +203,7 @@ const Sidebar = (props) => {
               </Menu.List>
             </Menu>
           </Column>
-          {props.children}
+          <AnimatePresence exitBeforeEnter>{props.children}</AnimatePresence>
           <style jsx>{`
             .pr-10 {
               padding-right: 10px;
