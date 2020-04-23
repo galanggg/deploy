@@ -31,7 +31,7 @@ const Scoreboard = () => {
     let table = [];
     for (let i = 1; i < 11; i++) {
       table.push(
-        <Table.Row>
+        <Table.Row key={i}>
           <Table.Heading>{i}</Table.Heading>
           <Table.Cell>T{i}</Table.Cell>
           <Table.Cell>mentimun_mentah</Table.Cell>
