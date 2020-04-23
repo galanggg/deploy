@@ -1,5 +1,5 @@
 import { Column, Title, Tag } from "rbx";
-import { Fade } from "../../components/Transition";
+import { Fade } from "../../Transition";
 import { motion } from "framer-motion";
 import Sidebar from "../../components/Sidebar";
 import util from "../../components/Utility.module.css";
